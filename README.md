@@ -42,3 +42,5 @@ The provided SQL query generates a list of players who have played for multiple 
 
 8. Calculate the average minutes played per game (mp_per_g) for each team (team_id) in the playoffs: -Kevin
 This SQL query calculates the average minutes played per game for each team in the playoffs, providing insights into team performance and player contributions. It helps assess team efficiency, workload distribution, and player reliance. The query also reveals information about team depth, playoff experience, and player fatigue management. Overall, it offers valuable metrics to analyze team dynamics and strategic decisions in the context of playoff success.
+
+Project presentation slides: https://docs.google.com/presentation/d/1_eOqkynGeYazQRe2l7JznGmUe9BtIPfrhr6hbA-sk1s/edit?usp=sharing
