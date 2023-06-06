@@ -1,13 +1,15 @@
-Select pt.player_name, dt.stl_pct
-From defensive_table as dt
-Join composite_table as ct on ct.unique_season_id = dt.unique_season_id
-Join player_table as pt on pt.unique_id = ct.unique_id
-Order By dt.stl_pct desc
-Limit 10; 
+SELECT pt.player, dt.stl_pct
+FROM defensive_table AS dt
+JOIN composite_table AS ct ON ct.Comp_ID = dt.Comp_ID
+JOIN player_table AS pt ON pt.UniqueID = ct.UniqueID
+JOIN season_table AS st ON st.season_id = ct.season_id
+WHERE dt.stl_pct IS NOT NULL AND dt.stl_pct <> '' AND st.season = 2022
+ORDER BY dt.stl_pct DESC
+LIMIT 15;
 
 
-Select pt.position, AVG(ot.fg3_pct)
-From offensive_table as ot
-Join composite_table as ct on ct.unique_season_id = ot.unique_season_id
-Join player_table as pt on pt.unique_id = ct.unique_id
-Group by pt.position; 
+SELECT pt.position, AVG(ot.fg3_pct) AS avg_fg3_pct
+FROM offensive_table AS ot
+JOIN composite_table AS ct ON ct.Comp_ID = ot.Comp_ID
+JOIN player_table AS pt ON pt.UniqueID = ct.UniqueID
+GROUP BY pt.position;
